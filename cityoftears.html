@@ -1,9 +1,9 @@
 <html>
 
 <head>
-  <title>City of Tears</title>
-  <!--============================ VERTEX SHADER ============================-->
-  <script id="shaderVertTexPhong" type="x-shader/x-vertex">
+    <title>City of Tears</title>
+    <!--============================ VERTEX SHADER ============================-->
+    <script id="shaderVertTexPhong" type="x-shader/x-vertex">
     #version 300 es
     precision mediump float;
     // Vertex shader for phong illumination model
@@ -52,8 +52,8 @@
     </script>
 
 
-  <!--=========================== FRAGMENT SHADER ===========================-->
-  <script id="shaderFragTexPhong" type="x-shader/x-fragment">
+    <!--=========================== FRAGMENT SHADER ===========================-->
+    <script id="shaderFragTexPhong" type="x-shader/x-fragment">
     #version 300 es
 
     // Fragment shader for phong illumination model
@@ -97,69 +97,129 @@
 
     </script>
 
-  <!--============================== LIBRARIES ==============================-->
-  <!-- Matrix library and code for standard transformations -->
-  <script type="text/javascript" src="./gl-matrix-min.js"></script>
+    <!--============================== LIBRARIES ==============================-->
+    <!-- Matrix library and code for standard transformations -->
+    <script type="text/javascript" src="./gl-matrix-min.js"></script>
 
-  <!-- include the shape creation functions -->
-  <script type="text/javascript" src="./cgIShape.js"></script>
+    <!-- include the shape creation functions -->
+    <script type="text/javascript" src="./cgIShape.js"></script>
 
-  <!-- definition of standard shapes -->
-  <script type="text/javascript" src="./myShapes-min.js"></script>
+    <!-- definition of standard shapes -->
+    <script type="text/javascript" src="./myShapes-min.js"></script>
 
-  <!-- include OBJ converter -->
-  <script type="text/javascript" src="./OBJ.js"></script>  
+    <!-- include OBJ converter -->
+    <script type="text/javascript" src="./OBJ.js"></script>
 
-  <!-- include custom OBJ/JS shapes -->
-  <script type="text/javascript" src="./demo.js"></script>
-  <script type="text/javascript" src="./Knight.js"></script>
-  <script type="text/javascript" src="./Bench.js"></script>
-  <script type="text/javascript" src="./Rain.js"></script>
-  <script type="text/javascript" src="./Building.js"></script>
+    <!-- include custom OBJ/JS shapes -->
+    <script type="text/javascript" src="./demo.js"></script>
+    <script type="text/javascript" src="./Knight.js"></script>
+    <script type="text/javascript" src="./Bench.js"></script>
+    <script type="text/javascript" src="./Rain.js"></script>
+    <script type="text/javascript" src="./Building.js"></script>
 
-  <!-- include the main tesselation functions -->
-  <script type="text/javascript" src="./textureMain.js"></script>
+    <!-- include the main tesselation functions -->
+    <script type="text/javascript" src="./textureMain.js"></script>
 
-  <!-- texture images -->
-  <img id="texDemo" src="Texture.png" style="display: none;"> </img>
-  <img id="texKnight" src="Knight.png" style="display: none;"> </img>
-  <img id="texBench" src="Bench.png" style="display: none;"> </img>
-  <img id="texRain" src="Rain.png" style="display: none;"> </img>
-  <img id="texBuilding" src="Building.png" style="display: none;"> </img>
+    <!-- texture images -->
+    <img id="texDemo" src="Texture.png" style="display: none;"> </img>
+    <img id="texKnight" src="Knight.png" style="display: none;"> </img>
+    <img id="texBench" src="Bench.png" style="display: none;"> </img>
+    <img id="texRain" src="Rain.png" style="display: none;"> </img>
+    <img id="texBuilding" src="Building.png" style="display: none;"> </img>
 
-  <!--========================= KEYBOARD FUNCTIONS ==========================-->
-  <script type="text/javascript">
-    function gotKey(event) {
+    <!--========================= KEYBOARD FUNCTIONS ==========================-->
+    <script type="text/javascript">
+        function gotKey(event) {
 
-      var key = event.key;
+            var key = event.key;
 
-      // Do stuff conditionally based on what "key"'s value is.
-      // if (key == 'a') {...}
+            // Do stuff conditionally based on what "key"'s value is.
+            // if (key == 'a') {...}
 
-      //draw();
-    }
-  </script>
+            //draw();
+        }
+    </script>
 
-  <!--================================ INIT =================================-->
-  <script type="text/javascript">
-    // Call init once the webpage has loaded
-    window.onload = init;
-  </script>
+    <!--================================ INIT =================================-->
+    <script type="text/javascript">
+        // Call init once the webpage has loaded
+        window.onload = init;
+    </script>
 </head>
 
 <!--================================ WEBPAGE ================================-->
+
 <body>
-  <canvas id="webgl-canvas" width="1280" height="720" style="background: red;">
-    Your browser does not support the HTML5 canvas element.
-  </canvas>
-  <p>
-    <audio controls loop>
-      <source src="music.mp3" type="audio/mpeg">
-      Your browser does not support the audio element.
-    </audio>
-    Play the music!
-  </p>
-  <img src="City.png" width="1280" height="720">
+    <canvas id="webgl-canvas" width="1280" height="720" style="background: red;">
+        Your browser does not support the HTML5 canvas element.
+    </canvas>
+
+    <p>
+        <audio controls loop>
+            <source src="music.mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </p>
+
+    <p>Play the music!</p>
+
+    <hr>
+
+    <h1>Welcome to The City of Tears!</h1>
+
+    <p>Hello! This is my final project for my 3D Graphics class at RIT. It was written in JavaScript using WebGL as an
+        expansion to a previous assignment I had made. The biggest things I added to the engine were Textured Phong
+        shading, transparency, and animation. I also learned a bit of 3D modeling to make everything you can see by
+        hand. The only things I didn't make are the music and the screenshot from the game itself.</p>
+
+    <p>Hollow Knight is one of my favorite games ever, so I decided to base my final project on a really great moment in
+        the game that means a lot to me. The game is about a small bug called The Knight and their traversal the depths
+        of a collapsed underground civilization. They meet many bugs to befriend or fight in many strange places. The
+        City of Tears is the first region of the game that appears to have any evidence of highly organized life in and
+        around it.</p>
+
+    <p>I remember my first descent into the city very well: it was late at night for me and I was a little tired, but I
+        was enjoying a very relaxing play session. I went into the next room and dropped into The City of Tears. The
+        music changed, the visual tone of the game shifted to a gentle blue, and the view swung out to show me the
+        beautiful architecture of the city. It was beautiful. I sat for a few moments watching the rain through the
+        window.</p>
+
+    <h2>Technical info:</h2>
+
+    <p>The project was written using HTML and JavaScript. The rendering was done with WebGL and GLSL. I used the
+        gl-matrix library to perform matrix transformations on the 3D models' coordinates. Most of the rest of the code
+        was built from portions of previous completed assignments.</p>
+
+    <p>There's not much technical stuff going on with The Knight themselves. I simply created the model and placed it
+        into the scene.</p>
+
+    <p>The next thing I modeled was the bench. I wanted to learn how to handle transparency, so I intentionally made the
+        front and back of the bench a flat polygon with a transparent texture. That's why you can see through to the
+        wall behind it.</p>
+
+    <p>The room around The Knight and the bench was also intended to have transparency, but without anything to display
+        behind it I suppose it didn't really matter too much.</p>
+
+    <p>I knew from the start that I wanted my scene to feature animated rain, but I wasn't sure exactly how I would do
+        it. Eventually, I remembered that video games often use extremely humorous solutions to mildly complex problems.
+        For example, Fallout 3 is now infamous for its train... which is actually a hat worn by an invisible character
+        who runs around on the tracks to move the train. Inspired by this, I decided that instead of making my program
+        draw lines of rain, I would instead make another 3D model of a bunch of sticks spread out in a very large circle
+        and spin it in front of the camera. This let me easily animate the rain by reusing the structure I already
+        programmed instead of having to create a system for randomly generating and placing rain drops, moving them to
+        the top or removing them from the bottom of the screen, etc. It also lets me easily make the animation play at
+        the same speed regardless of the framerate of the display, since the rotation of the wheel on each frame is
+        proportional to how much time has passed since the last frame was drawn. The fact that it's a static model means
+        the animation of the rain actually has a sort of loop, but I hopefully picked a good speed to avoid any obvious
+        looping.</p>
+
+    <hr>
+
+    <p>Thank you very much for taking a look at my project! I know it's not the best looking, but I love what I was able
+        to do with it in the time frame I had, and I would love to try something even more ambitious in the future!</p>
+
+    <p>Here's the original scene by the way:</p>
+    <img src="City.png" width="1280" height="720">
 </body>
 
 </html>
